@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('image.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(10px);
+            transform: scale(1.1); /* Slightly scale up to avoid blur edges */
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 5;
+        }
+
+        .text-overlay {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #ffffff !important;
+            font-family: 'Doto', monospace;
+            font-size: clamp(1rem, 3vw, 2rem);
+            font-weight: 400;
+            z-index: 10;
+            max-width: 90vw;
+            line-height: 1.2;
+            letter-spacing: 0.05em;
+            -webkit-text-fill-color: #ffffff !important;
+            -webkit-text-stroke: none !important;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            filter: brightness(0) invert(1) !important;
+        }
+
+        /* Ensure the background covers the entire viewport on all devices */
+        @media (max-width: 768px) {
+            .text-overlay {
+                font-size: clamp(1.2rem, 4vw, 2.5rem);
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text-overlay {
+                font-size: clamp(1rem, 3.5vw, 2rem);
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="overlay"></div>
+    <div class="text-overlay">
+         something is taking shape... see you soon!
+    </div>
+</body>
+</html>
